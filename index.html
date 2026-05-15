@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "container">
+        <h1>Employee Management System</h1>
+    
+    <div class = "form-container">
+        <input type = "text" id = "name" placeholder="Enter name">
+        <input type = "email" id = "email" placeholder="Enter email">
+        <select id="department">
+            <option value="HR">HR</option>
+            <option value ="Developer">Developer</option>
+            <option value = "Sales">Sales Manager</option>
+            <option value = "Accoutant">Accountant</option>
+            <option value = "Analyst">Analyst</option>
+            
+        </select>
+        <input type = "number" id = "salary" placeholder="Enter Salary">
+        <button onclick="addEmployee()">Add Employee</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="toggle-link">
+     <a href="signup.html"></a>
+      </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

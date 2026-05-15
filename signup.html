@@ -1,0 +1,70 @@
+
+<html>
+<head>
+  <title>Sign Up</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-wrapper">
+   <center>
+    <form id="signupForm">
+      <div style="margin-bottom:26px;">
+        <label for="name" style="display:block; margin-bottom:8px; font-weight:500;">Your Name</label>
+        <input type="text" id="name" placeholder="Enter Your Name" required minlength="5"/>
+      </div>
+
+      <div style="margin-bottom:26px;">
+        <label for="email" style="display:block; margin-bottom:8px; font-weight:500;">Email</label>
+        <input type="email" id="email" placeholder="you@gmail.com" required/>
+      </div>
+
+      <div style="margin-bottom:26px;">
+        <label for="password" style="display:block; margin-bottom:8px; font-weight:500;">Password</label>
+        <input type="password" id="password" placeholder="At least 6 characters" required minlength="6"/>
+      </div>
+
+      <div style="margin-bottom:26px;">
+        <label for="confirm" style="display:block; margin-bottom:8px; font-weight:500;">Confirm Password</label>
+        <input type="password" id="confirm" required/>
+      </div>
+
+      <button type="submit" class="btn">Create Account</button>
+
+      <div class="toggle-link">
+        Existing User Sign in! <a href="index.html">Sign in</a>
+      </div>
+
+    </form></center>
+  </div>
+</div>
+
+
+<script>
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  document.getElementById('signupForm').addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    document.querySelectorAll('.error').forEach(el => el.style.display = 'none');
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const pass = document.getElementById('password').value;
+    const conf = document.getElementById('confirm').value;
+
+    
+    if (pass.length < 6) { document.getElementById('pass-error').style.display = 'block'; valid = false; }
+    if (pass !== conf) { document.getElementById('confirm-error').style.display = 'block'; valid = false; }
+
+    if (valid) {
+      document.getElementById('signupSuccess').style.display = 'block';
+      setTimeout(() => { window.location.href = 'home.html'; }, 1600);
+    }
+  });
+</script>
+</body>
+</html>
+
